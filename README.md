@@ -23,7 +23,7 @@ $ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:ro \
 ```
 
 Docker Compose Example:
-```
+```yaml
 version: '2.2'
 
 services:
