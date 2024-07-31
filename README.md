@@ -22,6 +22,21 @@ $ docker run --name jmusicbot -d -v /path/to/config.txt:/app/config.txt:ro \
 -v /path/to/playlists:/app/playlists:ro --restart=always alexandreteles/jmusicbot
 ```
 
+Docker Compose Example:
+```yaml
+version: '2.2'
+
+services:
+  jmusicbot:
+    image: alexandreteles/jmusicbot:latest
+    container_name: jmusicbot
+    restart: unless-stopped
+    volumes:
+     - /path/to/config.txt:/app/config.txt
+     - /path/to/serversettings.json:/app/serversettings.json
+     - /path/to/Playlists:/app/Playlists #Optional
+```
+
 This image may or may not be updated to use environment variables, probably not.
 
 We scan our image builds for vulnerabilites using Trivy and Dependabot, so you can check the Security and Issues tabs to see if there's something bad going on and open an issue with us or fork it and fix it yourself (remember to push it upstream, aka us, pretty please).
